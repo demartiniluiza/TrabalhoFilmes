@@ -21,13 +21,13 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    // Um usuário cadastra MUITOS filmes -> hasMany()
+    
     public function filmes()
     {
         return $this->hasMany(Filme::class);
     }
 
-    // O último filme cadastrado por esse usuário -> hasOne()
+   
     public function ultimoFilme()
     {
         return $this->hasOne(Filme::class)->latestOfMany();

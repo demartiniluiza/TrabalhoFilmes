@@ -18,19 +18,19 @@ class Filme extends Model
         'user_id',
     ];
 
-    // Um filme pertence a UMA categoria -> belongsTo()
+    
     public function categoria()
     {
         return $this->belongsTo(Categoria::class);
     }
 
-    // Um filme pertence ao usuário que o cadastrou -> belongsTo()
+    
     public function usuario()
     {
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    // Transforma o link normal do YouTube no link de "embed" (para mostrar o vídeo na página)
+   
     public function getTrailerEmbedAttribute()
     {
         $url = $this->trailer;
@@ -40,7 +40,7 @@ class Filme extends Model
         } elseif (str_contains($url, 'youtu.be/')) {
             $id = explode('?', explode('youtu.be/', $url)[1])[0];
         } else {
-            $id = $url; // caso o usuário cole só o código do vídeo
+            $id = $url;
         }
 
         return 'https://www.youtube.com/embed/' . $id;

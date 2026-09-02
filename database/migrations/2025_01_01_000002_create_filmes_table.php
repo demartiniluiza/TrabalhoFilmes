@@ -13,13 +13,13 @@ return new class extends Migration
             $table->string('nome');
             $table->text('sinopse');
             $table->integer('ano');
-            $table->string('capa');     // link da imagem da capa
-            $table->string('trailer');  // link do trailer no YouTube
+            $table->string('capa');     
+            $table->string('trailer');  
 
-            // chave estrangeira da categoria (Categoria tem muitos Filmes)
+           
             $table->foreignId('categoria_id')->constrained('categorias');
 
-            // chave estrangeira do usuário que cadastrou o filme (exigido no PDF)
+            
             $table->foreignId('user_id')->constrained('users');
 
             $table->timestamps();

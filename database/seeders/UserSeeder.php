@@ -10,7 +10,7 @@ class UserSeeder extends Seeder
 {
     public function run(): void
     {
-        // Usuário fixo: como não temos tela de login, todo filme é cadastrado por ele.
+       
         User::create([
             'name' => 'Admin',
             'email' => 'admin@filmes.com',

@@ -11,10 +11,10 @@ class FilmeSeeder extends Seeder
 {
     public function run(): void
     {
-        // usa o usuário fixo criado no UserSeeder
+       
         $user = User::first();
 
-        // links de trailer e capa são só exemplos - pode trocar pelos reais
+        
         $filmes = [
             [
                 'nome' => 'Matrix',

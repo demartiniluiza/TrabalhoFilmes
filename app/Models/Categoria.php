@@ -10,7 +10,6 @@ class Categoria extends Model
 
     protected $fillable = ['nome'];
 
-    // Uma categoria tem MUITOS filmes -> hasMany()
     public function filmes()
     {
         return $this->hasMany(Filme::class);
